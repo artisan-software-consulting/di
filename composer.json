@@ -1,0 +1,32 @@
+{
+  "name": "jaschiel/di",
+  "type": "library",
+  "description": "A component for autowiring dependency injection",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Jim Schiel",
+      "email": "jim@artisanagility.com",
+      "homepage": "https://artisanagility.com",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "di\\": "src"
+    }
+  },
+  "archive": {
+    "exclude": [
+      "/composer.*"
+    ]
+  },
+  "config": {
+    "platform": {
+      "php": "8.2"
+    }
+  },
+  "require": {
+    "symfony/yaml": "^v7.0.0"
+  }
+}
