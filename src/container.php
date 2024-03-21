@@ -25,13 +25,15 @@ class container
         return static::$instance;
     }
 
-    public static function initialize($fileName): void
+    public static function initialize(array|string $fileNames): void
     {
-        $yaml = file_get_contents($fileName);
-        // Parse yaml to a PHP array
-        $config = Yaml::parse($yaml);
-        foreach ($config["classes"] as $key => $value) {
-            static::set($key, $value);
+        $fn = (is_string($fileNames)) ? [$fileNames] : $fileNames;
+        foreach ($fn as $file) {
+            $yaml = file_get_contents($file);
+            $config = Yaml::parse($yaml);
+            foreach ($config["classes"] as $key => $value) {
+                static::set($key, $value);
+            }
         }
     }
 
