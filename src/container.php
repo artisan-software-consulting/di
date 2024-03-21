@@ -1,6 +1,6 @@
 <?php
 
-namespace Sierra\architecture\di_configuration;
+namespace di;
 
 use Closure;
 use Exception;
