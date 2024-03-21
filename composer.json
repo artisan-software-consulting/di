@@ -1,5 +1,5 @@
 {
-  "name": "jaschiel/di",
+  "name": "artisan-software-consulting/di",
   "type": "library",
   "description": "A component for autowiring dependency injection",
   "license": "MIT",
