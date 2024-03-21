@@ -30,7 +30,7 @@ class container
         $yaml = file_get_contents($fileName);
         // Parse yaml to a PHP array
         $config = Yaml::parse($yaml);
-        foreach ($config as $key => $value) {
+        foreach ($config["classes"] as $key => $value) {
             static::set($key, $value);
         }
     }
