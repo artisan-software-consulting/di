@@ -19,17 +19,15 @@ class container
     public static function getInstance()
     {
         if (null === static::$instance) {
-            $tempInstance = new static();
-            $tempInstance->initialize();
             static::$instance = new static();
 
         }
         return static::$instance;
     }
 
-    public function initialize(): void
+    public static function initialize($fileName): void
     {
-        $yaml = file_get_contents('config.yml');
+        $yaml = file_get_contents($fileName);
         // Parse yaml to a PHP array
         $config = Yaml::parse($yaml);
         foreach ($config as $key => $value) {
